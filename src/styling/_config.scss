@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
+
+$main-font: 'Rakkas', cursive;
+$font-family: 'Poppins', sans-serif;
+
+$light-text: #fff;
+$dark-text: rgb(35, 36, 36);
+$color-text: #402a4e;
+$accent-text: rgb(72, 131, 127);
+$para-text: #838383;
+$light-grey: #d5d5d5;
+$background: rgb(64, 65, 58);
+$grey: rgb(197, 198, 195);
+$background-light: rgb(240, 240, 236);
+$background-dark-light: rgb(242, 242, 235);
+
+$off-white: rgb(252, 250, 249);
+
+
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
+
+/* utilities */
+.text-center {
+  text-align: center!important;
+}
+
+.text-left {
+  text-align: left!important;
+}
+  
+.text-right {
+  text-align: right!important;
+}
+
+.text-uppercase {
+  text-transform: uppercase!important;
+}
+
+.align-items-center {
+  align-items: center;
+}

@@ -9,7 +9,6 @@ import Footer from './components/Footer';
 function App() {
 
   return (
-    <div style={{height: '100%'}}>
     <Router>
       <Header />
       <Switch>
@@ -18,7 +17,6 @@ function App() {
       </Switch>
       <Footer />
     </Router>
-    </div>
   );
 }
 
