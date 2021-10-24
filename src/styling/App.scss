@@ -101,9 +101,9 @@ header {
     align-items: center;
 
     .block {
-      flex: 0 0 90%;
-      max-width: 90%;
-      padding-left: 25px;
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0 25px;
 
       h1 {
         color: $accent-text;

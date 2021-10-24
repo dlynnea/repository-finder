@@ -1,8 +1,12 @@
 import React from 'react';
 import moment from 'moment';
+import { faStar } from '@fortawesome/free-regular-svg-icons';
+import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faGem } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const RepoDetails = ({id, repos}) => {
-    // let date = moment();
     const renderDetails = repos.map(repo => {
         return (
             <div className="repo-details" key={id}>
@@ -16,16 +20,16 @@ const RepoDetails = ({id, repos}) => {
                         </h4>
                         <div className="info">
                             <div className="list">
-                                <p><span><i className="fa fa-code"></i></span> {repo.language ? repo.language : 'unknown'}</p>
+                                <p><span><i className="fa fa-code"></i></span><FontAwesomeIcon icon={faGem} />  {repo.language ? repo.language : 'unknown'}</p>
                             </div>
                             <div className="list">
-                                <p><span><i className="fas fa-code"></i></span> {repo.owner.login}</p>
+                                <p><span><i className="fas fa-code"></i></span><FontAwesomeIcon icon={faUser} /> {repo.owner.login}</p>
                             </div>
                             <div className="list">
-                                <p><span><i className="fas fa-code"></i></span> stars: {repo.stargazers_count}</p>
+                                <p><span><i className="fas fa-code"></i></span><FontAwesomeIcon icon={faStar} /> {repo.stargazers_count}</p>
                             </div>
                             <div className="list">
-                                <p><span><i className="fas fa-code"></i></span> date: {moment(repo.pushed_at).format()}</p>
+                                <p><span><i className="fas fa-code"></i></span><FontAwesomeIcon icon={faCalendar} /> {moment(repo.pushed_at).format('MMMM Do YYYY')}</p>
                             </div>
                         </div>
                     </div>

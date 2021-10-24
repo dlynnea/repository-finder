@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const RepoCard = ({ name, language, login, id, avatar, stars }) => {
 
-    console.log('CARD', language, login, name)
+    console.log('repo card: lang login name', language, login, name)
 
     return (
         <>

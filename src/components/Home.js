@@ -6,12 +6,37 @@ const Home = () => {
     const [inputValue, setInputValue] = useState("");
     const [loading, setLoading] = useState(false);
     const [repos, setRepos] = useState([]);
-    const [select, setSelect] = useState(['All'])
+    const [lang] = useState(["language", "name"])
+    const [selectLanguage, setSelectLanguage] = useState(['All'])
+    const [selectSort, setSelectSort] = useState(['Default'])
 
-    const search = (event) => {
-        event.preventDefault();
-        setInputValue(event.target.query.value)
+    function search(repos) {
+        return repos.filter((repo) => {
+            if (repo.language == selectLanguage) {
+            return lang.some(
+                (column) => {
+                return repo[column]?.toString().toLowerCase().indexOf(inputValue.toLowerCase()) > -1
+                }
+            )
+            } else if (selectLanguage == 'All') {
+            return lang.some(
+                (column) => {
+                return repo[column]?.toString().toLowerCase().indexOf(inputValue.toLowerCase()) > -1
+                }
+            )
+            } 
+        })  
     }
+
+    function sortByStars(a, b) {
+        if (selectSort == 'Star-Count') {
+            return a.stargazers_count - b.stargazers_count
+        } else if (selectSort == 'Default') {
+            return;
+        }
+    }
+
+    const sortedFiltered = search(repos).sort(sortByStars);
 
     useEffect(() => {
         if (!inputValue) {
@@ -42,18 +67,25 @@ const Home = () => {
                         Search Repositories
                     </h1>
                 </label>
-               <form className="searchForm" onSubmit={(event) => search(event)}>
-                    <input
-                        className="search-input"
-                        type="text" 
-                        name="query"
-                        palceholder="Search Github Repos..."
-                    />
-                <button className="btn">{loading ? 'Searching...' : 'Search'}</button>
-                </form>
                 <div className="select">
                     <select
-                        onChange={(event) => setSelect(event.target.value)}
+                        onChange={(e) => setSelectSort(e.target.value)}
+                        className="sort-by" aria-label="Sort">
+                            <option value="Default">Sort By (Default)</option>
+                            <option value="Star-Count">Star Count</option>
+                    </select> 
+                </div>
+                <input
+                    value={inputValue} onChange={(e) => setInputValue(e.target.value)}
+                    className="search-input"
+                    type="text" 
+                    name="query"
+                    palceholder={loading ? 'Searching...' : 'Search'}
+                />
+                <button className="btn">{loading ? 'Searching...' : 'Search'}</button>
+                <div className="select">
+                    <select
+                        onChange={(e) => setSelectLanguage(e.target.value)}
                         className="select-language" aria-label="Filter Repositories by Language">
                         <option value="All">Filter By Language</option>
                         <option value="JavaScript">JavaScript</option>
@@ -74,7 +106,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="repo-container">
-                {repos && repos.map(repo => (
+                {sortedFiltered?.map(repo => (
                     <Link to={`/${repo.owner.login}/${repo.name}`}>
                         <RepoCard key={repo.id} language={repo.language} username={repo.owner.login} name={repo.name} avatar={repo.owner.avatar_url} stars={repo.stargazers_count} />
                     </Link>
