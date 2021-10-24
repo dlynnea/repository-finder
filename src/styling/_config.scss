@@ -14,8 +14,9 @@ $background: rgb(64, 65, 58);
 $grey: rgb(197, 198, 195);
 $background-light: rgb(240, 240, 236);
 $background-dark-light: rgb(242, 242, 235);
-
 $off-white: rgb(252, 250, 249);
+
+$radius: 0.2rem;
 
 @mixin easeOut {
   transition: all 0.5s ease-out;

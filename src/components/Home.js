@@ -11,26 +11,22 @@ const Home = () => {
     const [selectSort, setSelectSort] = useState(['Default'])
 
     function search(repos) {
-        return repos.filter((repo) => {
+        return repos.filter(repo => {
             if (repo.language == selectLanguage) {
-            return lang.some(
-                (column) => {
+            return lang.some(column => {
                 return repo[column]?.toString().toLowerCase().indexOf(inputValue.toLowerCase()) > -1
-                }
-            )
+                })
             } else if (selectLanguage == 'All') {
-            return lang.some(
-                (column) => {
+            return lang.some(column => {
                 return repo[column]?.toString().toLowerCase().indexOf(inputValue.toLowerCase()) > -1
-                }
-            )
+                })
             } 
         })  
     }
 
     function sortByStars(a, b) {
         if (selectSort == 'Star-Count') {
-            return a.stargazers_count - b.stargazers_count
+            return b.stargazers_count - a.stargazers_count
         } else if (selectSort == 'Default') {
             return;
         }
@@ -48,7 +44,6 @@ const Home = () => {
             .then(data => {
             setLoading(false);
             setRepos(data.items);
-            console.log('HOME', data.items)
         })
             .catch(err => {
             setLoading(false);
@@ -105,17 +100,16 @@ const Home = () => {
                 </div>
                 </div>
             </div>
-            <div className="repo-container">
+            <div className="repos-wrapper">
                 {sortedFiltered?.map(repo => (
                     <Link to={`/${repo.owner.login}/${repo.name}`}>
-                        <RepoCard key={repo.id} language={repo.language} username={repo.owner.login} name={repo.name} avatar={repo.owner.avatar_url} stars={repo.stargazers_count} />
+                        <RepoCard key={repo.id} language={repo.language} username={repo.owner.login} name={repo.name} avatar={repo.owner.avatar_url} stars={repo.stargazers_count} id={repo.id} />
                     </Link>
                 ))}
             </div>
             </div>
         </div>
     )
-
 }
 
 export default Home;

@@ -1,0 +1,88 @@
+.repos-wrapper {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    // margin: 2rem;
+    // display: grid;
+    // gap: 1rem;
+    // grid-template-columns: 1fr;
+    justify-content: center;
+
+    a {
+        text-decoration: none;
+        position: relative;
+        top: 0;
+        right: 0;
+        padding: 10px;
+    }
+}
+  
+.card {
+    box-shadow: 0 0 10px 5px $light-grey;
+    border-radius: $radius;
+    min-width: 28rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $background;
+  
+    &__image {
+      width: 10rem;
+      height: 10rem;
+      object-fit: cover;
+    }
+  
+    &__body {
+      margin: 1rem;
+      flex-grow: 1;
+    }
+
+    &__title {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 240px;
+        max-width: 240px;
+        line-height: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__language {
+        line-height: 1.2rem;
+    }
+
+    &__stars {
+        line-height: 1.2rem;
+    }
+
+    &__user {
+      font-size: 1.4rem;
+      margin-top: 0.6rem;
+  
+        &::before {
+            font-size: 1rem;
+            position: relative;
+            top: -0.3rem;
+            padding-right: 0.1rem;
+        }
+    }
+  
+    &__btn {
+        border: none;
+        border-top: 1px solid $light-grey;
+        background-color: transparent;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: bold;
+        color: inherit;
+        width: 100%;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        cursor: pointer;
+    
+        &:hover {
+            color: $para-text;
+        }
+    }
+
+}
