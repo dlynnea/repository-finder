@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import RepoCard from './RepoCard';
 
 const Home = () => {
     const [inputValue, setInputValue] = useState("");
@@ -75,7 +76,7 @@ const Home = () => {
             <div className="repo-container">
                 {repos && repos.map(repo => (
                     <Link to={`/${repo.owner.login}/${repo.name}`}>
-                        {/* <Card key={repo.id} language={repo.language} username={repo.owner.login} name={repo.name} avatar={repo.owner.avatar_url} stars={repo.stargazers_count} /> */}
+                        <RepoCard key={repo.id} language={repo.language} username={repo.owner.login} name={repo.name} avatar={repo.owner.avatar_url} stars={repo.stargazers_count} />
                     </Link>
                 ))}
             </div>

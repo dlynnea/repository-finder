@@ -1,5 +1,7 @@
 @import "config";
 @import "header";
+@import "repo";
+@import "details";
 
 * {
   margin: 0;
@@ -104,7 +106,7 @@ header {
       padding-left: 25px;
 
       h1 {
-        color: $light-text;
+        color: $accent-text;
         font-size: 40px;
         font-weight: 600;
         margin: 0;

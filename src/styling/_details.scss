@@ -1,0 +1,109 @@
+
+.repo-details {
+    padding: 100px 15px 85px 15px;
+    background-color: $light-text;
+    
+    .details-content {
+      display: flex;
+      justify-content: center;
+      justify-self: center;
+      justify-items: center;
+      margin: 0 140px;
+      
+      .content-text {
+        margin-top: 22px;
+        text-align: center;
+  
+        h4 {
+          font-size: 25px;
+          font-weight: 600;
+          margin: 0 0 5px;
+          color: $dark-text;
+        }
+  
+        h6 {
+          font-size: 18px;
+          font-weight: 500;
+          margin: 18px 0px;
+          color: $dark-text;
+        }
+  
+        span {
+          color: $accent-text;
+        }
+  
+        .info {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+  
+          .list {
+            flex: 0 0 calc(50% - 15px);
+            max-width: calc(50% - 15px);
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 6px;
+  
+            p {
+              margin: 0;
+              font-size: 15px;
+              font-weight: 400;
+              line-height: 24px;
+              color: $para-text;
+            }
+          }
+        }
+      }
+    }
+  
+    .img {
+      display: flex;
+      max-width: 100%;
+      justify-content: center;
+      
+      img {
+        display: block;
+        max-width: 30%;
+        border-radius: 10px;
+        border: 8px solid $background;
+      }
+    }
+  
+    .details-name {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 30px;
+      text-align: center;
+  
+      a {
+        display: inline-block;
+        font-size: 35px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 0 0 10px;
+        color: $dark-text;
+        position: relative;
+        padding-bottom: 0;
+        text-decoration: none;
+  
+        &:before {
+          content: '';
+          position: absolute;
+          left: 30%;
+          right: 30%;
+          height: 2px;
+          background-color: $accent-text;
+          bottom: 0;
+        }
+      }
+  
+      p.small {
+        display: block;
+        font-size: 14px;
+        color: $para-text;
+        font-weight: 400;
+        letter-spacing: 2px;
+      }
+    }
+  }
