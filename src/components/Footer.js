@@ -2,9 +2,13 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <>
         <footer>
-            <div className="container">
+            <section className="footer">
+                <div className="container">
+                    <p>Hotel Engine 2021</p>
+                </div>
+            </section>
+            {/* <div className="container">
                 <div className="row">
                     <div className="social">
                         <a href='https://www.linkedin.com/in/danielle-matton/' target='_blank' rel='noopener noreferrer'>
@@ -21,14 +25,8 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </footer>
-        <section className="copyright">
-            <div className="container">
-                <p>&copy; 2021 copyright</p>
-            </div>
-        </section>
-        </>
     )
 }
 
