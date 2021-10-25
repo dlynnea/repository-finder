@@ -6,9 +6,26 @@ const Home = () => {
     const [inputValue, setInputValue] = useState("");
     const [loading, setLoading] = useState(false);
     const [repos, setRepos] = useState([]);
-    const [lang] = useState(["language", "name"])
-    const [selectLanguage, setSelectLanguage] = useState(['All'])
-    const [selectSort, setSelectSort] = useState(['Default'])
+    const [lang] = useState(["language", "name"]);
+    const [selectLanguage, setSelectLanguage] = useState(['All']);
+    const [selectSort, setSelectSort] = useState(['Default']);
+
+    useEffect(() => {
+        if (!inputValue) {
+          return;
+        }
+        setLoading(true);
+        fetch(`https://api.github.com/search/repositories?q=${inputValue}`)
+            .then(res => res.json())
+            .then(data => {
+            setLoading(false);
+            setRepos(data.items);
+        })
+            .catch(err => {
+            setLoading(false);
+            console.error(err);
+        });
+    }, [inputValue]);
 
     function search(repos) {
         return repos?.filter(repo => {
@@ -34,29 +51,10 @@ const Home = () => {
 
     const sortedFiltered = search(repos)?.sort(sortByStars);
 
-    useEffect(() => {
-        if (!inputValue) {
-          return;
-        }
-        setLoading(true);
-        fetch(`https://api.github.com/search/repositories?q=${inputValue}`)
-            .then(res => res.json())
-            .then(data => {
-            setLoading(false);
-            setRepos(data.items);
-        })
-            .catch(err => {
-            setLoading(false);
-            console.error(err);
-        });
-    }, [inputValue]);
-
     return(
         <div className="home" id="home">
             <div className="search-content">
-                <h1 className="sr-only">
-                    Search Repositories
-                </h1>
+                <h1>Search Repositories</h1>
                 <div className="search-wrapper">
                     <div className="select select-sort">
                         <select
@@ -74,33 +72,34 @@ const Home = () => {
                         name="query"
                         placeholder="Search..."
                     />
-                <div className="select select-lang">
-                    <select
-                        onChange={(e) => setSelectLanguage(e.target.value)}
-                        className="select-language" aria-label="Filter Repositories by Language">
-                        <option value="All">Filter By Language</option>
-                        <option value="JavaScript">JavaScript</option>
-                        <option value="TypeScript">TypeScript</option>
-                        <option value="Python">Python</option>
-                        <option value="Clojure">Clojure</option>
-                        <option value="Ruby">Ruby</option>
-                        <option value="Java">Java</option>
-                        <option value="C++">C++</option>
-                        <option value="Swift">Swift</option>
-                        <option value="PHP">PHP</option>
-                        <option value="HTML">HTML</option>
-                        <option value="CSS">CSS</option>
-                    </select> 
-                    <span className="focus"></span>
+                    <div className="select select-lang">
+                        <select
+                            onChange={(e) => setSelectLanguage(e.target.value)}
+                            className="select-language" aria-label="Filter Repositories by Language">
+                            <option value="All">Filter By Language</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="TypeScript">TypeScript</option>
+                            <option value="Python">Python</option>
+                            <option value="Clojure">Clojure</option>
+                            <option value="Ruby">Ruby</option>
+                            <option value="Java">Java</option>
+                            <option value="C++">C++</option>
+                            <option value="Swift">Swift</option>
+                            <option value="PHP">PHP</option>
+                            <option value="Kotlin">Kotlin</option>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                        </select>
+                        <span className="focus"></span>
+                    </div>
                 </div>
             </div>
             <div className="repos-wrapper">
-                {sortedFiltered?.map(repo => (
+                {sortedFiltered && sortedFiltered?.map(repo => (
                     <Link to={`/${repo.owner.login}/${repo.name}`}>
                         <RepoCard key={repo.id} language={repo.language} username={repo.owner.login} name={repo.name} avatar={repo.owner.avatar_url} stars={repo.stargazers_count} id={repo.id} />
                     </Link>
                 ))}
-            </div>
             </div>
         </div>
     )

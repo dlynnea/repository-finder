@@ -1,6 +1,5 @@
 @import "config";
 @import "header";
-@import "repo";
 @import "details";
 @import "card";
 
@@ -40,6 +39,68 @@ body {
       padding: 0;
     }    
   }
+}
+
+/* search input */
+.search-wrapper {
+  width: 100%;
+  margin: 40px 40px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.search-input {
+  padding: 4px 0 0 4px;
+  font-size: 20px;
+  padding: 7px 0 4px 28px;
+  border: none;
+  color: $accent-text;
+  border-radius: 0.25rem;
+  box-shadow: 0px 2px 4px $grey;
+  height: 50px;
+  margin: 0 1rem 0 1rem;
+
+  &:hover {
+    box-shadow: 0px 0px 0px $grey;
+  }
+}
+
+select {
+  appearance: none!important;
+  outline: none;
+  font-size: 20px;
+  border-radius: 0.25rem;
+  border: none;
+  box-shadow: 0px 2px 4px $grey;
+  padding: .8rem 2rem;
+  margin: 0;
+  color: $accent-text;
+}
+
+.select {
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: transparent;
+  display: grid;
+  align-items: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0.8em;
+    height: 0.5em;
+    background-color: $accent-text;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    justify-self: end;
+    margin-right: 1rem;
+  }
+}
+
+select, .select:after {
+  grid-area: select;
 }
 
 /* footer */

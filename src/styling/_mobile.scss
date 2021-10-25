@@ -29,54 +29,54 @@
         flex-direction: column;
         justify-content: start;
         flex-wrap: wrap;
-        margin: 30px 0 10px 0;
+        margin: 10px 0 10px 0;
     }
   
-      .search-input {
+    .search-input {
         width: 280px;
         color: $accent-text;
         height: 50px;
-      }
-  
-      select {
-          margin-left: 0;
-          width: 280px;
-      }
-  
-      .select {
-        margin-top: 3.5em;
-      }
-  
-      .select-lang {
-          margin-top: 0.5rem;
-      }
-  
-      .select-sort {
-          margin-bottom: 0.4rem;
-      }
-    
-      .home {
+    }
+
+    select {
+        margin-left: 0;
+        width: 280px;
+    }
+
+    .select {
+        margin-top: 1.5rem;
+    }
+
+    .select-lang {
+        margin-top: 0.5rem;
+    }
+
+    .select-sort {
+        margin-bottom: 0.4rem;
+    }
+
+    .home {
         width: 100%;
         margin: 0;
-      }
-  
-      .card {
-          display: grid;
-          min-width: 50px;
-  
-          &__image {
-              width: 100%;
-          }
-      }
+    }
 
-      .detail-container {
-          height: 94vh;
-      }
-  
-      .repo-details {
-          padding: 100px 0 10px 0;
+    .card {
+        display: grid;
+        min-width: 50px;
 
-          .details-content {
+        &__image {
+            width: 100%;
+        }
+    }
+
+    .detail-container {
+        height: 100vh;
+    }
+
+    .repo-details {
+        padding: 100px 0 10px 0;
+
+        .details-content {
             margin: 0;
 
             .content-text .info {
@@ -91,8 +91,8 @@
                     align-items: center;
                 }
             }
-          }
-      }
+        }
+    }
 }
 
 @media(max-width: 500px){
@@ -130,20 +130,20 @@
 @media (max-width: 375px) {
 
     .home .search-wrapper h1 {
-      font-size: 30px;
-      margin-top: 4rem;
+        font-size: 30px;
+        margin-top: 4rem;
     }
 
     .search-input {
-      width: 280px;
-      color: $accent-text;
-      height: 50px;
+        width: 280px;
+        color: $accent-text;
+        height: 50px;
     }
 
     .search-wrapper {
-      justify-content: start;
-      flex-wrap: wrap;
-      margin: 30px 0 10px 0;
+        justify-content: start;
+        flex-wrap: wrap;
+        margin: 30px 0 10px 0;
     }
 
     select {
@@ -152,7 +152,7 @@
     }
 
     .select {
-      margin-top: 3.5em;
+        margin-top: 1rem;
     }
 
     .select-lang {
@@ -164,8 +164,8 @@
     }
   
     .home {
-      width: 100%;
-      margin: 0;
+        width: 100%;
+        margin: 0;
     }
 
     .card {
@@ -189,5 +189,4 @@
             }
         }
     }
-
-  }
+}
