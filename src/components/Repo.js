@@ -11,10 +11,8 @@ const Repo = ({ match }) => {
         .then(res => res.json())
         .then(
           (result) => {
-              console.log('REPOS', result)
               setIsLoaded(true);
               setItems([result]);
-              console.log('REPOS RESULTS', items)
           },
           (error) => {
               setIsLoaded(true);
