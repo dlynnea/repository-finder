@@ -11,7 +11,6 @@ const RepoCard = ({ name, language, login, id, avatar, stars }) => {
                 <h2 className="card__title">{name}</h2>
                 <p className="card__language">{language}</p>
                 <p className="card__stars"><FontAwesomeIcon icon={faStar} /><span>{stars} </span></p>
-                <h3 className="card__user">{login}</h3>
                 <button className="card__btn">More Details</button>
             </div>
         </div>

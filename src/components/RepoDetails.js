@@ -29,13 +29,13 @@ const RepoDetails = ({id, repos}) => {
                                 <p><span><i className="fas fa-code"></i></span><FontAwesomeIcon icon={faCalendar} /> {moment(repo.pushed_at).format('MMMM Do YYYY')}</p>
                             </div>
                             <div className="list">
-                                <p><span><i className="fas fa-code"></i></span><FontAwesomeIcon icon={faStar} /> {repo.stargazers_count}</p>
+                                <p><span><i className="fas fa-code"></i></span><FontAwesomeIcon icon={faStar} /> stars: {repo.stargazers_count}</p>
                             </div>
                             <div className="list">
-                                <p><span><i className="fas fa-code"></i></span><FontAwesomeIcon icon={faPlusSquare} /> {repo.subscribers_count}</p>
+                                <p><span><i className="fas fa-code"></i></span><FontAwesomeIcon icon={faPlusSquare} /> subscribers: {repo.subscribers_count}</p>
                             </div>
                             <div className="list">
-                                <p><span><i className="fas fa-code"></i></span><FontAwesomeIcon icon={faThumbsUp} /> {repo.forks_count}</p>
+                                <p><span><i className="fas fa-code"></i></span><FontAwesomeIcon icon={faThumbsUp} />forks: {repo.forks_count}</p>
                             </div>
                         </div>
                     </div>

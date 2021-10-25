@@ -53,49 +53,45 @@ const Home = () => {
 
     return(
         <div className="home" id="home">
-            <div className="container">
-                <div className="search-content">
-                    <div className="search-wrapper">
-                        <label htmlFor="search-form">
-                            <h1 className="sr-only">
-                                Search Repositories
-                            </h1>
-                        </label>
-                        <div className="select select-sort">
-                            <select
-                                onChange={(e) => setSelectSort(e.target.value)}
-                                className="sort-by" aria-label="Sort">
-                                    <option value="Default">Sort By (Default)</option>
-                                    <option value="Star-Count">Star Count</option>
-                            </select> 
-                        </div>
-                        <input
-                            value={inputValue} onChange={(e) => setInputValue(e.target.value)}
-                            className="search-input"
-                            type="text" 
-                            name="query"
-                            placeholder="Search Repositories..."
-                        />
-                        {/* <button className="btn">{loading ? 'Searching...' : 'Search'}</button> */}
-                    <div className="select select-lang">
+            <div className="search-content">
+                <h1 className="sr-only">
+                    Search Repositories
+                </h1>
+                <div className="search-wrapper">
+                    <div className="select select-sort">
                         <select
-                            onChange={(e) => setSelectLanguage(e.target.value)}
-                            className="select-language" aria-label="Filter Repositories by Language">
-                            <option value="All">Filter By Language</option>
-                            <option value="JavaScript">JavaScript</option>
-                            <option value="TypeScript">TypeScript</option>
-                            <option value="Python">Python</option>
-                            <option value="Clojure">Clojure</option>
-                            <option value="Ruby">Ruby</option>
-                            <option value="Java">Java</option>
-                            <option value="C++">C++</option>
-                            <option value="Swift">Swift</option>
-                            <option value="PHP">PHP</option>
-                            <option value="HTML">HTML</option>
-                            <option value="CSS">CSS</option>
+                            onChange={(e) => setSelectSort(e.target.value)}
+                            className="sort-by" aria-label="Sort">
+                                <option value="Default">Sort (Default)</option>
+                                <option value="Star-Count">Star Count</option>
                         </select> 
-                        <span className="focus"></span>
                     </div>
+                    <input
+                        value={inputValue} 
+                        onChange={(e) => setInputValue(e.target.value)}
+                        className="search-input"
+                        type="text" 
+                        name="query"
+                        placeholder="Search..."
+                    />
+                <div className="select select-lang">
+                    <select
+                        onChange={(e) => setSelectLanguage(e.target.value)}
+                        className="select-language" aria-label="Filter Repositories by Language">
+                        <option value="All">Filter By Language</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="TypeScript">TypeScript</option>
+                        <option value="Python">Python</option>
+                        <option value="Clojure">Clojure</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Java">Java</option>
+                        <option value="C++">C++</option>
+                        <option value="Swift">Swift</option>
+                        <option value="PHP">PHP</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                    </select> 
+                    <span className="focus"></span>
                 </div>
             </div>
             <div className="repos-wrapper">

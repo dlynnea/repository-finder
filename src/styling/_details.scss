@@ -1,41 +1,25 @@
-
 .repo-details {
     padding: 100px 15px 85px 15px;
     background-color: $light-text;
-    
+    height: 100vh;
+    margin-top: 4rem;
+
     .details-content {
       display: flex;
       justify-content: center;
       justify-self: center;
       justify-items: center;
-      margin: 0 140px;
+      margin: 0 430px;
       
       .content-text {
         margin-top: 22px;
         text-align: center;
   
-        h4 {
-          font-size: 25px;
-          font-weight: 600;
-          margin: 0 0 5px;
-          color: $dark-text;
-        }
-  
-        h6 {
-          font-size: 18px;
-          font-weight: 500;
-          margin: 18px 0px;
-          color: $dark-text;
-        }
-  
-        span {
-          color: $accent-text;
-        }
-  
         .info {
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-between;
+          padding-left: 40px;
+          justify-content: center;
   
           .list {
             flex: 0 0 calc(50% - 15px);
@@ -96,14 +80,6 @@
           background-color: $accent-text;
           bottom: 0;
         }
-      }
-  
-      p.small {
-        display: block;
-        font-size: 14px;
-        color: $para-text;
-        font-weight: 400;
-        letter-spacing: 2px;
       }
     }
   }

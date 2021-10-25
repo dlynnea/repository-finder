@@ -1,5 +1,24 @@
-@media(max-width: 991px){
+@media(max-width: 1280px){ 
+    .repo-details .details-content {
+        margin: 0 380px;
 
+        .content-text .info {
+            padding-left: 10px;
+        }
+    }
+}
+
+@media(max-width: 1140px){ 
+    .repo-details .details-content {
+        margin: 0 300px;
+
+        .content-text .info {
+            padding-left: 10px;
+        }
+    }
+}
+
+@media(max-width: 991px){
     .home .search-wrapper h1 {
         font-size: 40px;
         margin-top: 4rem;
@@ -29,7 +48,7 @@
       }
   
       .select-lang {
-          margin-top: 1rem;
+          margin-top: 0.5rem;
       }
   
       .select-sort {
@@ -49,89 +68,34 @@
               width: 100%;
           }
       }
+
+      .detail-container {
+          height: 94vh;
+      }
   
       .repo-details {
           padding: 100px 0 10px 0;
-  
-          .details-content .content-text .info {
-              flex-direction: column;
-              align-items: center;
-  
-              .list {
-                  max-width: 500px;
-              }
-          }
-  
-      }
-}
 
-@media(max-width: 768px) {
+          .details-content {
+            margin: 0;
 
-    .home .search-wrapper h1 {
-        font-size: 30px;
-        margin-top: 4rem;
-      }
-  
-      .search-input {
-        width: 280px;
-        color: $accent-text;
-        height: 50px;
-      }
-  
-      .search-wrapper {
-        justify-content: start;
-        flex-wrap: wrap;
-        margin: 30px 0 10px 0;
-      }
-  
-      select {
-          margin-left: 0;
-          width: 280px;
-      }
-  
-      .select {
-        margin-top: 3.5em;
-      }
-  
-      .select-lang {
-          margin-top: 1rem;
-      }
-  
-      .select-sort {
-          margin-bottom: 0.4rem;
-      }
+            .content-text .info {
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
     
-      .home {
-        width: 100%;
-        margin: 0;
-      }
-  
-      .card {
-          display: grid;
-          min-width: 50px;
-  
-          &__image {
-              width: 100%;
+                .list {
+                    max-width: 500px;
+                
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
           }
-      }
-  
-      .repo-details {
-          padding: 100px 0 10px 0;
-  
-          .details-content .content-text .info {
-              flex-direction: column;
-              align-items: center;
-  
-              .list {
-                  max-width: 500px;
-              }
-          }
-  
       }
 }
 
 @media(max-width: 500px){
-
     h1::before {
         display: none;
     }
@@ -192,7 +156,7 @@
     }
 
     .select-lang {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
 
     .select-sort {
